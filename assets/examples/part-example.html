@@ -1,0 +1,74 @@
+<section class="page">
+  <div class="runhead"><span class="sec">01</span><span class="sec-ttl">实验原理</span><span class="sec-en">Principle</span></div>
+  <div class="content">
+    <p class="eyebrow">一条方程，两种读法</p>
+    <h2>从 $E=U+Ir$ 出发</h2>
+    <p class="lead">lead 段只说一件事：这一页要解决什么；宽度交给 <b>.cols</b> 栅格，图由 figs.py 注入。</p>
+
+    <div class="cols c2 mt4">
+      <div>
+        <h3 class="plain">核心方程</h3>
+        <div class="formula-card">
+          <div class="fc-label">闭合电路欧姆定律</div>
+          $$E = U + Ir$$
+        </div>
+        <p class="small">改写为 $U=-rI+E$，就得到一条关于 $I$ 的一次函数，两个特征量分别对应两个待测量：</p>
+        <div class="kpis">
+          <div class="kpi"><div class="k">纵截距 $b$</div><div class="v">$b=E$</div></div>
+          <div class="kpi"><div class="k">斜率 $k$</div><div class="v">$k=-r$</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="figbox">
+          {{FIG:ui_demo}}
+          <div class="figcap"><b>图 1-1</b>　U–I 图线：截距是电动势，斜率是内阻</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols c2 mt4">
+      <div>
+        <h3>电路</h3>
+        <div class="figbox">
+          {{FIG:circuit_demo}}
+          <div class="figcap"><b>图 1-2</b>　矢量电路图（figlib 生成，任意缩放不糊）</div>
+        </div>
+      </div>
+      <div>
+        <h3>三步推导</h3>
+        <div class="deriv">
+          <div class="step"><div class="chip">换</div><div class="stx">
+            <div class="t">替换不可测量</div><div class="e">$I'=I+U/R_V$</div></div></div>
+          <div class="step"><div class="chip">分</div><div class="stx">
+            <div class="t">分离测量量</div><div class="e">$\dfrac{E}{I}=R+R_A+r$</div></div></div>
+          <div class="step"><div class="chip">调</div><div class="stx">
+            <div class="t">调成直线</div><div class="e">$\dfrac1I=\dfrac1E R+\dfrac{R_A+r}{E}$</div></div></div>
+        </div>
+        <div class="callout">
+          <div class="ct">易错点</div>
+          <p>纵轴可以不为零，但斜率一律用 $\Delta U/\Delta I$ 求，不能用 $b/I_{\text{短}}$。</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt0">三种方法对照</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><th style="width:14%">方法</th><th style="width:22%">器材</th><th style="width:16%">图像</th>
+          <th style="width:16%">斜率 $k$</th><th style="width:15%">截距 $b$</th><th>结果</th></tr>
+        <tr><td><b>伏安法</b></td><td>V + A + 变阻器</td><td>$U$–$I$</td><td>$|k|=r$</td><td>$b=E$</td>
+          <td>$E=b$；$r=|k|$</td></tr>
+        <tr><td><b>安阻法</b></td><td>A + 电阻箱</td><td>$1/I$–$R$</td><td>$k=1/E$</td><td>$b=(R_A+r)/E$</td>
+          <td>$E=1/k$；$r=b/k-R_A$</td></tr>
+        <tr><td><b>伏阻法</b></td><td>V + 电阻箱</td><td>$1/U$–$1/R$</td><td>$k=r/E$</td><td>$b=1/E$</td>
+          <td>$E=1/b$；$r=k/b$</td></tr>
+      </table>
+    </div>
+
+    <div class="note">
+      <div class="ct">一句话结论</div>
+      <p>纵轴不是电压时（$1/I$、$1/U$），截距与斜率的含义完全不同：先查表，再代公式。</p>
+    </div>
+  </div>
+  <div class="runfoot"><span class="ft">01 实验原理</span><span class="pnum"><b>03</b> / 16</span></div>
+</section>

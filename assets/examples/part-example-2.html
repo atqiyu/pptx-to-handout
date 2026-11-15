@@ -1,0 +1,55 @@
+<section class="page">
+  <div class="runhead"><span class="sec">07</span><span class="sec-ttl">真题精析</span><span class="sec-en">Worked example</span></div>
+  <div class="content">
+    <div class="exhead">
+      <span class="no">例 1</span><span class="src">示例题 · 伏安法</span>
+      <span class="ttl">题干、图、解析、答案的四段式</span>
+    </div>
+
+    <div class="qbox">
+      <p>某同学用图 1 的电路测量干电池的电动势 $E$ 和内阻 $r$。电压表内阻约 $1.5\ \text{k}\Omega$，
+        电流表内阻 $R_A=0.2\ \Omega$，滑动变阻器最大阻值 $20\ \Omega$。</p>
+      <p><span class="qno">(1)</span> 该电路属于甲、乙两种接法中的哪一种？电压表的读数是否等于路端电压？</p>
+      <p><span class="qno">(2)</span> 由多组数据作出 $U$–$I$ 图线，纵截距为 $b=1.48\ \text{V}$，图线过 $(0.50\ \text{A},\ 1.16\ \text{V})$，
+        求 $E$ 与 $r$（结果保留两位有效数字）。</p>
+    </div>
+
+    <div class="cols c2">
+      <div>
+        <div class="figbox">
+          {{FIG:circuit_demo}}
+          <div class="figcap"><b>图 1</b>　电压表只跨接 $R$，电流表串在干路</div>
+        </div>
+      </div>
+      <div>
+        <div class="figbox">
+          {{FIG:ui_demo}}
+          <div class="figcap"><b>图 2</b>　拟合得到的 $U$–$I$ 直线</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sol mt2">
+      <div class="st">解析</div>
+      <div class="cols c2">
+        <div>
+          <p><b>(1)</b> 电压表只跨接 $R$，电流表串在干路，属于乙接法。电压表读数比路端电压少了
+            电流表上的分压 $IR_A$，所以<b class="nowrap">不等于</b>路端电压。</p>
+          <p><b>(2)</b> 乙接法中 $E=U+I(r+R_A)$，故 $U$–$I$ 图线的斜率绝对值是 $r+R_A$，截距就是 $E$：</p>
+          <div class="math-block">$$E=b=1.48\ \text{V}$$</div>
+        </div>
+        <div>
+          <p>由斜率求内阻：</p>
+          <div class="math-block">$$k=\frac{1.48-1.16}{0.50}=0.64\ \Omega$$</div>
+          <div class="math-block">$$r=k-R_A=0.44\ \Omega$$</div>
+          <p class="small muted">若忘记减 $R_A$，会答成 $0.64\ \Omega$——这是本类题最常见的失分点。</p>
+        </div>
+      </div>
+      <div class="ansbox">
+        <div class="l">ANSWER</div>
+        <div class="v">(1) <b>乙接法</b>；<b class="nowrap">不等于</b>　(2) <b>$E=1.48\ \text{V}$</b>，<b>$r=0.44\ \Omega$</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot"><span class="ft">07 真题精析</span><span class="pnum"><b>11</b> / 16</span></div>
+</section>

@@ -1,0 +1,21 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# generated builds
+out/
+handout/vendor/
+handout/handout.html
+handout/handout.src.html
+
+# qa renders
+qa/
+work/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

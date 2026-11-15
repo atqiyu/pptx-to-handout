@@ -1,0 +1,215 @@
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #e8ecf2; }
+body {
+  font-family: "Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif;
+  color: #333e4f;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+}
+.page {
+  width: 210mm; height: 297mm; padding: 15mm 17mm 11mm 17mm;
+  background: #fff; position: relative; overflow: hidden;
+  page-break-after: always; break-after: page;
+  margin: 0 auto;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ------- running head ------- */
+.runhead { display: flex; align-items: center; gap: 3mm; padding-bottom: 2.2mm;
+  border-bottom: 0.4pt solid #cfd7e3; margin-bottom: 6mm; }
+.runhead .sec {
+  width: 6.4mm; height: 6.4mm; background: #12325c; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8pt; font-weight: 700; letter-spacing: 0.02em; flex: none;
+}
+.runhead .sec-ttl { font-size: 10.5pt; font-weight: 700; color: #111a29; letter-spacing: 0.01em; }
+.runhead .sec-en { margin-left: auto; font-size: 7pt; letter-spacing: 0.22em; color: #98a3b3;
+  text-transform: uppercase; }
+.runfoot { position: absolute; left: 17mm; right: 17mm; bottom: 6mm;
+  display: flex; align-items: baseline; padding-top: 2mm; border-top: 0.4pt solid #dfe5ee; }
+.runfoot .ft { font-size: 7pt; letter-spacing: 0.16em; color: #a3adbb; text-transform: uppercase; }
+.runfoot .pnum { margin-left: auto; font-size: 8.5pt; color: #75808f; font-variant-numeric: tabular-nums; }
+.runfoot .pnum b { color: #12325c; font-size: 10pt; }
+
+/* ------- headings ------- */
+.eyebrow { font-size: 7.5pt; letter-spacing: 0.2em; color: #93a0b1; text-transform: uppercase;
+  margin: 0 0 2.5mm; }
+h1 { font-size: 27pt; line-height: 1.2; margin: 0 0 3mm; color: #111a29; font-weight: 700;
+  letter-spacing: -0.01em; }
+h2 { font-size: 19pt; line-height: 1.3; margin: 0 0 3.5mm; color: #111a29; font-weight: 700;
+  letter-spacing: -0.005em; }
+h2 .thin { font-weight: 400; color: #5b6779; }
+h3 { font-size: 11pt; margin: 4.6mm 0 1.8mm; color: #12325c; font-weight: 700;
+  padding-left: 2.6mm; border-left: 1.4mm solid #12325c; line-height: 1.4; }
+h3.plain { border: none; padding-left: 0; }
+h4 { font-size: 10pt; margin: 3.5mm 0 1.5mm; color: #111a29; font-weight: 700; }
+
+p { font-size: 10pt; line-height: 1.85; margin: 0 0 2.2mm; text-align: justify; }
+p.small, .small { font-size: 9pt; line-height: 1.75; }
+p.lead { font-size: 10.5pt; line-height: 1.9; color: #2b3546; }
+.muted { color: #75808f; }
+b, strong { font-weight: 700; color: #111a29; }
+.accent { color: #1d4e89; }
+.amber { color: #b45309; }
+.green { color: #1f6b52; }
+
+ul, ol { margin: 0 0 2.4mm; padding-left: 5mm; }
+li { font-size: 10pt; line-height: 1.8; margin-bottom: 1.2mm; }
+ul.tight li, ol.tight li { margin-bottom: 0.6mm; }
+
+/* ------- math ------- */
+.katex { font-size: 1.02em; }
+.math-block { margin: 2.2mm 0; text-align: center; }
+.math-block .katex-display { margin: 0; }
+.katex-display > .katex { font-size: 1.12em; }
+
+/* ------- components ------- */
+.cols { display: flex; gap: 6mm; }
+.cols > * { min-width: 0; }
+.c2 > * { flex: 1 1 0; }
+.c3 > * { flex: 1 1 0; }
+.c-5-7 > .a { flex: 5; } .c-5-7 > .b { flex: 7; }
+.c-7-5 > .a { flex: 7; } .c-7-5 > .b { flex: 5; }
+
+.figbox { background: #fbfcfe; border: 0.4pt solid #dbe2ec; padding: 2.5mm 2.5mm 1.5mm; }
+.figbox .fig-svg { display: block; width: 100%; height: auto; }
+.figcap { font-size: 7.5pt; color: #75808f; margin-top: 1.2mm; text-align: center; }
+.figcap b { color: #4a5668; font-weight: 700; }
+
+.formula-card { background: #f4f7fb; border-left: 1.6mm solid #12325c; padding: 2.6mm 4mm;
+  margin: 2.4mm 0; }
+.formula-card .fc-label { font-size: 7.5pt; letter-spacing: 0.14em; color: #6b7789;
+  text-transform: uppercase; margin-bottom: 1mm; }
+
+.kpis { display: flex; gap: 4mm; margin: 3mm 0; }
+.kpi { flex: 1; background: #f6f8fc; border: 0.4pt solid #dbe2ec; padding: 3mm 3.5mm; }
+.kpi .k { font-size: 7.5pt; color: #75808f; letter-spacing: 0.06em; margin-bottom: 1.2mm; }
+.kpi .v { font-size: 12pt; color: #12325c; font-weight: 700; }
+
+.callout { background: #fcfaef; border-left: 1.6mm solid #c98a12; padding: 2.6mm 4mm 2.2mm;
+  margin: 3mm 0; }
+.callout .ct { font-size: 8.5pt; font-weight: 700; color: #9a6a05; letter-spacing: 0.05em;
+  margin-bottom: 1mm; }
+.callout p { font-size: 9.2pt; line-height: 1.75; margin: 0 0 1mm; }
+.callout p:last-child { margin-bottom: 0; }
+
+.note { background: #f4f8f6; border-left: 1.6mm solid #1f6b52; padding: 2.6mm 4mm;
+  margin: 3mm 0; }
+.note .ct { font-size: 8.5pt; font-weight: 700; color: #1f6b52; margin-bottom: 1mm; letter-spacing: 0.05em; }
+.note p { font-size: 9.2pt; line-height: 1.75; margin: 0; }
+
+.deriv { border: 0.4pt solid #dbe2ec; padding: 3mm 3.5mm; margin: 2.5mm 0; background: #fff; }
+.step { display: flex; gap: 3mm; align-items: flex-start; margin-bottom: 2.2mm; }
+.step:last-child { margin-bottom: 0; }
+.step .chip { flex: none; width: 7mm; height: 7mm; background: #12325c; color: #fff;
+  font-size: 8pt; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.step .stx { flex: 1; padding-top: 0.4mm; }
+.step .stx .t { font-size: 7.5pt; color: #75808f; letter-spacing: 0.05em; margin-bottom: 0.4mm; }
+.step .stx .e { font-size: 10pt; }
+
+table { width: 100%; border-collapse: collapse; margin: 2.5mm 0; }
+th { background: #eef2f7; color: #12325c; font-size: 8pt; font-weight: 700;
+  padding: 1.7mm 2.5mm; text-align: left; border-bottom: 0.6pt solid #b9c5d6; letter-spacing: 0.02em; }
+td { font-size: 8.8pt; padding: 1.55mm 2.5mm; border-bottom: 0.4pt solid #e2e8f0; vertical-align: top;
+  line-height: 1.65; }
+tr:last-child td { border-bottom: none; }
+td.c, th.c { text-align: center; }
+td .katex { font-size: 0.98em; }
+.table-wrap { border: 0.4pt solid #dbe2ec; }
+.table-wrap table { margin: 0; }
+
+.exhead { display: flex; align-items: center; gap: 3mm; margin-bottom: 4mm; }
+.exhead .no { background: #12325c; color: #fff; font-size: 8pt; font-weight: 700;
+  padding: 1.4mm 2.4mm; letter-spacing: 0.08em; flex: none; }
+.exhead .src { font-size: 8pt; color: #75808f; letter-spacing: 0.04em; }
+.exhead .ttl { margin-left: auto; font-size: 8pt; color: #1d4e89; letter-spacing: 0.06em; }
+
+.qbox { background: #fbfcfe; border: 0.4pt solid #dbe2ec; padding: 3.5mm 4mm 2mm; margin-bottom: 3mm; }
+.qbox p { font-size: 9.6pt; line-height: 1.8; margin-bottom: 1.2mm; }
+.qno { font-weight: 700; color: #12325c; }
+.blank { display: inline-block; min-width: 16mm; border-bottom: 0.7pt solid #a9b4c4;
+  text-align: center; color: #b45309; font-weight: 700; padding: 0 1.5mm; }
+.blank.w { min-width: 34mm; }
+
+.sol { margin-top: 1mm; }
+.sol .st { font-size: 8pt; font-weight: 700; color: #1f6b52; letter-spacing: 0.1em;
+  margin-bottom: 1.2mm; }
+.sol p { font-size: 9.4pt; line-height: 1.8; margin-bottom: 1.4mm; text-align: left; }
+.sol .math-block { margin: 1.6mm 0; }
+.ansbox { background: #f2f7f4; border: 0.4pt solid #cfe2d8; padding: 2.4mm 3.5mm; margin-top: 2mm; }
+.ansbox .l { font-size: 7.5pt; letter-spacing: 0.12em; color: #1f6b52; margin-bottom: 0.8mm; }
+.ansbox .v { font-size: 9.4pt; line-height: 1.75; color: #14483a; }
+.ansbox .v b { color: #0f3d31; }
+
+.tag { display: inline-block; font-size: 7.2pt; letter-spacing: 0.06em; padding: 0.6mm 1.8mm;
+  background: #eef2f7; color: #4a5668; margin-right: 1.5mm; }
+
+/* ------- cover ------- */
+.cover { background: #0d1b2e; color: #fff; padding: 0; }
+.cover .inner { position: absolute; inset: 0; padding: 22mm 20mm 18mm; }
+.cover .brand { font-size: 7.5pt; letter-spacing: 0.30em; color: #7f93ad; text-transform: uppercase; }
+.cover .rule { width: 26mm; height: 0.8mm; background: #c8a86a; margin: 6mm 0 9mm; }
+.cover h1 { color: #fff; font-size: 38pt; line-height: 1.22; letter-spacing: 0.01em; height: auto; }
+.cover .sub { font-size: 12pt; color: #b9c8da; margin-top: 6mm; letter-spacing: 0.06em; }
+.cover .eq { position: absolute; left: 20mm; bottom: 58mm; color: #e8eef6; font-size: 20pt; }
+.cover .meta { position: absolute; left: 20mm; bottom: 22mm; font-size: 8.5pt; color: #8fa2ba;
+  line-height: 2.0; letter-spacing: 0.03em; }
+.cover .meta b { color: #d5e0ec; font-weight: 500; }
+.cover .art { position: absolute; right: 0; bottom: 0; width: 150mm; }
+.cover .art svg { width: 100%; height: auto; display: block; }
+.cover .kicker { position: absolute; right: 20mm; top: 22mm; text-align: right; }
+.cover .kicker .big { font-size: 42pt; color: #1c3557; font-weight: 700; line-height: 1; }
+.cover .kicker .sm { font-size: 7.5pt; letter-spacing: 0.24em; color: #55708f; margin-top: 3mm; }
+
+/* ------- toc ------- */
+.toc { margin: 0; }
+.toc .row { display: flex; align-items: baseline; gap: 2.5mm; padding: 2.6mm 0;
+  border-bottom: 0.4pt dotted #cfd7e3; }
+.toc .row:last-child { border-bottom: none; }
+.toc .n { font-size: 8pt; color: #98a3b3; width: 8mm; flex: none; font-variant-numeric: tabular-nums; }
+.toc .t { font-size: 10pt; color: #111a29; }
+.toc .d { flex: 1; border-bottom: 0.4pt dotted #c9d2de; margin-bottom: 1mm; }
+.toc .p { font-size: 9pt; color: #12325c; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.objectives { counter-reset: obj; }
+.obj { display: flex; gap: 3.5mm; margin-bottom: 3.2mm; }
+.obj .idx { flex: none; font-size: 9pt; font-weight: 700; color: #12325c; width: 7mm;
+  border-top: 0.7pt solid #12325c; padding-top: 1mm; }
+.obj .tx { font-size: 9.4pt; line-height: 1.7; color: #333e4f; }
+.obj .tx b { color: #111a29; }
+
+.sumcards { display: flex; gap: 3.5mm; margin-top: 4mm; }
+.sumcard { flex: 1; border-top: 1.2mm solid #12325c; padding-top: 2.5mm; }
+.sumcard .h { font-size: 7.5pt; color: #75808f; letter-spacing: 0.1em; margin-bottom: 1.2mm; }
+.sumcard .b { font-size: 9pt; line-height: 1.7; color: #333e4f; }
+.sumcard .b b { color: #12325c; }
+
+.kv { display: flex; gap: 2mm; margin: 1.4mm 0; }
+.kv .k { font-size: 8.5pt; color: #75808f; width: 16mm; flex: none; }
+.kv .v { font-size: 9pt; color: #222c3c; }
+
+/* ------- small helpers ------- */
+.right { text-align: right; }
+.center { text-align: center; }
+.nowrap { white-space: nowrap; }
+.mt0 { margin-top: 0; } .mb0 { margin-bottom: 0; }
+.mt2 { margin-top: 2mm; } .mt4 { margin-top: 4mm; } .mt6 { margin-top: 6mm; }
+.hr { height: 0.4pt; background: #dfe5ee; margin: 4mm 0; }
+.pill { display: inline-block; background: #12325c; color: #fff; font-size: 7.5pt;
+  padding: 0.7mm 2.2mm; letter-spacing: 0.08em; }
+.pill.light { background: #eef2f7; color: #12325c; }
+.pill.amber { background: #fbeed6; color: #8a5a05; }
+.pill.green { background: #e6f2ec; color: #14523f; }
+
+.qa { display: flex; gap: 3mm; padding: 2mm 0; border-bottom: 0.4pt solid #eef1f6; }
+.qa:last-child { border-bottom: none; }
+.qa .q { flex: 5.6; font-size: 9.2pt; line-height: 1.72; }
+.qa .a { flex: 4.4; font-size: 9pt; line-height: 1.72; color: #1f6b52; }
+.qa .a b { color: #14483a; }
+
+/* KaTeX 	ext{} has no CJK glyphs -> falls back to SimSun. Force the UI sans. */
+.katex .text, .katex .mord.text, .katex .textrm, .katex .textnormal, .katex .textsf {
+  font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
